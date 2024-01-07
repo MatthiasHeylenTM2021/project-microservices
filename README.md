@@ -1,6 +1,6 @@
 # Projectdocumentatie
 ## Introductie
-Dit project is een (lokaal) microservices gebaseerde applicatie die een platform biedt voor het beheren van cursussen, studenten en feedback. Elk van deze functionaliteiten is ingekapseld binnen zijn eigen microservice, wat losse koppeling en hoge cohesie oplevert./><br /> De basisfunctionaliteiten zouden normaal volledig moeten zijn, inclusief een Rate Limiter uitbreiding.
+Dit project is een (lokaal) microservices gebaseerde applicatie die een platform biedt voor het beheren van cursussen, studenten en feedback. Elk van deze functionaliteiten is ingekapseld binnen zijn eigen microservice, wat losse koppeling en hoge cohesie oplevert.<br /> De basisfunctionaliteiten zouden normaal volledig moeten zijn, inclusief een Rate Limiter uitbreiding.
 
 ## Microservices
 De applicatie bestaat uit de volgende microservices:
