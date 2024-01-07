@@ -12,7 +12,7 @@ Feedback Service: Beheert feedbackgegevens. Biedt eindpunten voor het ophalen va
 ## Componenten
 De applicatie bevat ook de volgende componenten:
 
-API Gateway: Dient als het enige ingangs punt voor het systeem. Routeert inkomende aanvragen naar de juiste microservice op basis van het aanvraagpad en de methode.<br />
+API Gateway: Dient als het enige ingangs punt voor het systeem. Routeert inkomende aanvragen naar de juiste microservice op basis van het aanvraagpad en de methode.<br /><br />
 Database: Bewaart gegevens voor elke microservice. Elke microservice heeft zijn eigen database om losse koppeling en hoge cohesie te garanderen.
 
 ## Uitbreidingen
