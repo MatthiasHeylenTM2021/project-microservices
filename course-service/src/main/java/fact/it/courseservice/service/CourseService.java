@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -106,6 +107,37 @@ public class CourseService {
                 .bodyToFlux(StudentResponse.class)
                 .collectList()
                 .block();
+    }
+
+    public Course updateCourse(Course updatedCourse, Long courseId) {
+        Optional<Course> existingCourseOptional = courseRepository.findById(courseId);
+
+        if (existingCourseOptional.isPresent()) {
+            Course existingCourse = existingCourseOptional.get();
+
+            existingCourse.setTitle(updatedCourse.getTitle());
+            existingCourse.setCourseNumber(updatedCourse.getCourseNumber());
+            existingCourse.setDescription(updatedCourse.getDescription());
+            existingCourse.setInstructor(updatedCourse.getInstructor());
+
+            return courseRepository.save(existingCourse);
+        } else {
+            return null;
+        }
+    }
+
+    public boolean deleteCourse(Long courseId) {
+        Optional<Course> optionalCourse = courseRepository.findById(courseId);
+
+        if (optionalCourse.isPresent()) {
+            Course course = optionalCourse.get();
+
+            courseRepository.delete(course);
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private CourseResponse mapToCourseResponse(Course course) {

@@ -40,3 +40,17 @@ spring:
             - Method=POST
           filters:
             - SetPath=/api/courses
+        - id: course-service-update
+          uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/courses/{id}
+            - Method=PUT
+          filters:
+            - SetPath=/api/courses/{id}
+        - id: course-service-delete
+          uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/courses/{id}
+            - Method=DELETE
+          filters:
+            - SetPath=/api/courses/{id}
