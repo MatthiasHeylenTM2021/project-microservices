@@ -14,7 +14,8 @@ De applicatie bevat ook de volgende componenten:
 
 API Gateway: Dient als het enige ingangs punt voor het systeem. Routeert inkomende aanvragen naar de juiste microservice op basis van het aanvraagpad en de methode.
 Database: Bewaart gegevens voor elke microservice. Elke microservice heeft zijn eigen database om losse koppeling en hoge cohesie te garanderen.
-Uitbreidingen
+
+## Uitbreidingen
 De applicatie kan op verschillende manieren worden uitgebreid:
 
 Extra Services: Nieuwe services kunnen worden toegevoegd om extra functionaliteit te bieden. Bijvoorbeeld, een service kan worden toegevoegd om docenten of afdelingen te beheren.
