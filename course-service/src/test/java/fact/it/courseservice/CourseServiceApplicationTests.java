@@ -13,8 +13,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -101,5 +103,48 @@ class CourseServiceApplicationTests {
         assertEquals("course 1", result.getTitle());
         assertEquals("this is course one", result.getDescription());
         assertEquals("instructor 1", result.getInstructor());
+    }
+
+    @Test
+    public void testUpdateCourse() {
+        // Arrange
+        Course course = new Course();
+        course.setId(1L);
+        course.setCourseNumber("001");
+        course.setTitle("Updated Title");
+        course.setDescription("Updated Description");
+        course.setInstructor("Updated Instructor");
+
+        when(courseRepository.findById(1L)).thenReturn(Optional.of(course));
+        when(courseRepository.save(any(Course.class))).thenReturn(course);
+
+        // Act
+        Course updatedCourse = courseService.updateCourse(course, 1L);
+
+        // Assert
+        assertEquals(course.getTitle(), updatedCourse.getTitle());
+        assertEquals(course.getDescription(), updatedCourse.getDescription());
+        assertEquals(course.getInstructor(), updatedCourse.getInstructor());
+        verify(courseRepository, times(1)).save(any(Course.class));
+    }
+
+    @Test
+    public void testDeleteCourse() {
+        // Arrange
+        Course course = new Course();
+        course.setId(1L);
+        course.setCourseNumber("001");
+        course.setTitle("Title");
+        course.setDescription("Description");
+        course.setInstructor("Instructor");
+
+        when(courseRepository.findById(1L)).thenReturn(Optional.of(course));
+
+        // Act
+        boolean isDeleted = courseService.deleteCourse(1L);
+
+        // Assert
+        assertTrue(isDeleted);
+        verify(courseRepository, times(1)).delete(course);
     }
 }
