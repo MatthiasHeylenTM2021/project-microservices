@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class StudentResponse {
     private Long id;
-    private String studentNumber;
+    private String courseNumber;
     private String firstName;
     private String lastName;
     private String email;

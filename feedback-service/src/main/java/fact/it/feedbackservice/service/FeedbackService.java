@@ -20,10 +20,12 @@ public class FeedbackService {
     public void loadData() {
         if (feedbackRepository.count() == 0) {
             Feedback feedback = new Feedback();
+            feedback.setCourseNumber("001");
             feedback.setComment("Goed");
             feedback.setRating(10);
 
             Feedback feedback2 = new Feedback();
+            feedback2.setCourseNumber("001");
             feedback2.setComment("Slecht");
             feedback2.setRating(1);
 
@@ -46,10 +48,15 @@ public class FeedbackService {
         return feedbacks.stream().map(this::mapToFeedbackResponse).toList();
     }
 
+    public List<FeedbackResponse> getFeedbackByCourseNumber(String courseNumber) {
+        List<Feedback> students = feedbackRepository.findByCourseNumber(courseNumber);
+        return students.stream().map(this::mapToFeedbackResponse).toList();
+    }
 
     private FeedbackResponse mapToFeedbackResponse(Feedback feedback) {
         return FeedbackResponse.builder()
                 .id(feedback.getId())
+                .courseNumber(feedback.getCourseNumber())
                 .comment(feedback.getComment())
                 .rating(feedback.getRating())
                 .build();

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FeedbackRequest {
+    private String courseNumber;
     private String comment;
     private int rating;
 }

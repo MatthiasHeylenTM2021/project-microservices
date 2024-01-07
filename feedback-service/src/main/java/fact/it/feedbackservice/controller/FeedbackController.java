@@ -27,5 +27,11 @@ public class FeedbackController {
     public List<FeedbackResponse> getAllFeedback() {
         return feedbackService.getAllFeedback();
     }
+
+    @GetMapping("/byCourse")
+    @ResponseStatus(HttpStatus.OK)
+    public List<FeedbackResponse> getFeedbackByCourseNumber(@RequestParam String courseNumber) {
+        return feedbackService.getFeedbackByCourseNumber(courseNumber);
+    }
 }
 

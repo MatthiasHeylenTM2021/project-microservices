@@ -28,9 +28,9 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping("/{studentNumber}")
+    @GetMapping("/byCourse")
     @ResponseStatus(HttpStatus.OK)
-    public StudentResponse getStudentByStudentNumber(@PathVariable String studentNumber) {
-        return studentService.getStudentByStudentNumber(studentNumber);
+    public List<StudentResponse> getStudentsByCourseNumber(@RequestParam String courseNumber) {
+        return studentService.getStudentsByCourseNumber(courseNumber);
     }
 }

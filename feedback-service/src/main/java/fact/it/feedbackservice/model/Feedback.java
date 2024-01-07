@@ -15,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Feedback {
     @Id
     private String id;
+    private String courseNumber;
     private String comment;
     private int rating;
 }

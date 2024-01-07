@@ -2,11 +2,14 @@ package fact.it.courseservice.service;
 
 import fact.it.courseservice.dto.CourseRequest;
 import fact.it.courseservice.dto.CourseResponse;
+import fact.it.courseservice.dto.FeedbackResponse;
+import fact.it.courseservice.dto.StudentResponse;
 import fact.it.courseservice.model.Course;
 import fact.it.courseservice.repository.CourseRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
@@ -15,6 +18,7 @@ import java.util.List;
 public class CourseService {
 
     private final CourseRepository courseRepository;
+    private final WebClient webClient;
 
     @PostConstruct
     public void loadData() {
@@ -75,6 +79,26 @@ public class CourseService {
     public CourseResponse getCourseByCourseNumber(String courseNumber) {
         Course course = courseRepository.findByCourseNumber(courseNumber);
         return mapToCourseResponse(course);
+    }
+
+    public List<FeedbackResponse> getFeedbackForCourse(String courseNumber) {
+        return webClient
+                .get()
+                .uri("http://localhost:8080/api/feedback/byCourse?courseNumber=" + courseNumber)
+                .retrieve()
+                .bodyToFlux(FeedbackResponse.class)
+                .collectList()
+                .block();
+    }
+
+    public List<StudentResponse> getStudentsForCourse(String courseNumber) {
+        return webClient
+                .get()
+                .uri("http://localhost:8081/api/students/byCourse?courseNumber=" + courseNumber)
+                .retrieve()
+                .bodyToFlux(StudentResponse.class)
+                .collectList()
+                .block();
     }
 
     private CourseResponse mapToCourseResponse(Course course) {

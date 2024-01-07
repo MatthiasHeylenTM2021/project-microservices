@@ -20,31 +20,31 @@ public class StudentService {
     public void loadData() {
         if(studentRepository.count() == 0){
             Student student = new Student();
-            student.setStudentNumber("001");
+            student.setCourseNumber("001");
             student.setFirstName("Jan");
             student.setLastName("Versmissen");
             student.setEmail("jan.versmissen@webmail.de");
 
             Student student2 = new Student();
-            student2.setStudentNumber("002");
+            student2.setCourseNumber("001");
             student2.setFirstName("Dirk");
             student2.setLastName("Tegels");
             student2.setEmail("dirk.tegels@yahoo.be");
 
             Student student3 = new Student();
-            student3.setStudentNumber("003");
+            student3.setCourseNumber("002");
             student3.setFirstName("Johan");
             student3.setLastName("Deswaef");
             student3.setEmail("johan.deswaef@mail.com");
 
             Student student4 = new Student();
-            student4.setStudentNumber("004");
+            student4.setCourseNumber("002");
             student4.setFirstName("John");
             student4.setLastName("Peeters");
             student4.setEmail("john.peeters@gmail.nl");
 
             Student student5 = new Student();
-            student5.setStudentNumber("005");
+            student5.setCourseNumber("002");
             student5.setFirstName("Marc");
             student5.setLastName("Janssens");
             student5.setEmail("marc.janssens@msn.be");
@@ -59,28 +59,28 @@ public class StudentService {
 
     public StudentResponse createStudent(StudentRequest studentRequest) {
         Student student = Student.builder()
-                .studentNumber(studentRequest.getStudentNumber())
+                .courseNumber(studentRequest.getCourseNumber())
                 .firstName(studentRequest.getFirstName())
                 .lastName(studentRequest.getLastName())
                 .email(studentRequest.getEmail())
                 .build();
-        return mapTostudentResponse(student);
+        return mapToStudentResponse(student);
     }
 
     public List<StudentResponse> getAllStudents() {
         List<Student> students = studentRepository.findAll();
-        return students.stream().map(this::mapTostudentResponse).toList();
+        return students.stream().map(this::mapToStudentResponse).toList();
     }
 
-    public StudentResponse getStudentByStudentNumber(String studentNumber) {
-        Student student = studentRepository.findByStudentNumber(studentNumber);
-        return mapTostudentResponse(student);
+    public List<StudentResponse> getStudentsByCourseNumber(String courseNumber) {
+        List<Student> students = studentRepository.findByCourseNumber(courseNumber);
+        return students.stream().map(this::mapToStudentResponse).toList();
     }
 
-    private StudentResponse mapTostudentResponse(Student student) {
+    private StudentResponse mapToStudentResponse(Student student) {
         return StudentResponse.builder()
                 .id(student.getId())
-                .studentNumber(student.getStudentNumber())
+                .courseNumber(student.getCourseNumber())
                 .firstName(student.getFirstName())
                 .lastName(student.getLastName())
                 .email(student.getEmail())

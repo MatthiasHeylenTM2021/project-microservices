@@ -1,16 +1,16 @@
-package fact.it.studentservice.dto;
+package fact.it.courseservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentRequest {
+@Builder
+public class StudentResponse {
+    private Long id;
     private String courseNumber;
     private String firstName;
     private String lastName;

@@ -1,4 +1,4 @@
-package fact.it.feedbackservice.dto;
+package fact.it.courseservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FeedbackResponse {
     private String id;
-    private String courseNumber;
     private String comment;
     private int rating;
 }
