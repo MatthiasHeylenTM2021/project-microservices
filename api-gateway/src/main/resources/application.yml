@@ -29,7 +29,14 @@ spring:
         - id: course-service
           uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/course
+            - Path=/courses
             - Method=GET
+          filters:
+            - SetPath=/api/courses
+        - id: course-service-create
+          uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/courses
+            - Method=POST
           filters:
             - SetPath=/api/courses
