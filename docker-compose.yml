@@ -68,6 +68,23 @@ services:
       MYSQL_DB_HOST: mysql-course
       MYSQL_DB_PORT: 3306
 
+  api-gateway:
+    depends_on:
+      - feedback-service
+      - student-service
+      - course-service
+    image: matleaf/ede-api-gateway
+    ports:
+      - 8083:8083
+    links:
+      - feedback-service
+      - student-service
+      - course-service
+    environment:
+      FEEDBACK_SERVICE_BASEURL: feedback-service:8080
+      STUDENT_SERVICE_BASEURL: student-service:8082
+      COURSE_SERVICE_BASEURL: course-service:8081
+
 volumes:
   mongodb_feedback_data:
   mysql_student_data:

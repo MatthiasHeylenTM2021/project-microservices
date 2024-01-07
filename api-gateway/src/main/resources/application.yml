@@ -19,3 +19,17 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/feedback/all
+        - id: student-service
+          uri: http://${STUDENT_SERVICE_BASEURL:localhost:8082}
+          predicates:
+            - Path=/students
+            - Method=GET
+          filters:
+            - SetPath=/api/students
+        - id: course-service
+          uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/course
+            - Method=GET
+          filters:
+            - SetPath=/api/courses
