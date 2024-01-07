@@ -10,7 +10,14 @@
         <option value="$PROJECT_DIR$/feedback-service/pom.xml" />
         <option value="$PROJECT_DIR$/student-service/pom.xml" />
         <option value="$PROJECT_DIR$/course-service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/ede-microservices-ex-3-gateway/ede-microservices-ex-3-gateway/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$USER_HOME$/Downloads/ede-microservices-ex-3-gateway/ede-microservices-ex-3-gateway/api-gateway/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>

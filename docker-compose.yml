@@ -1,0 +1,74 @@
+services:
+  mongo-feedback:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_feedback_data:/data/db
+
+  mysql-course:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_course_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+
+  mysql-student:
+    image: mysql:latest
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql_student_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+
+  feedback-service:
+    depends_on:
+      - mongo-feedback
+    image: matleaf/feedback-service
+    ports:
+      - 8080:8080
+    links:
+      - mongo-feedback
+    environment:
+      MONGODB_PORT: 27017
+      MONGODB_HOST: mongo-feedback
+
+  student-service:
+    depends_on:
+      - mysql-student
+    image: matleaf/student-service
+    ports:
+      - 8082:8082
+    links:
+      - mysql-student
+    environment:
+      MYSQL_DB_USERNAME: root
+      MYSQL_DB_PASSWORD: abc123
+      MYSQL_DB_HOST: mysql-student
+      MYSQL_DB_PORT: 3306
+
+  course-service:
+    depends_on:
+      - feedback-service
+      - student-service
+    image: matleaf/course-service
+    ports:
+      - 8081:8081
+    links:
+      - feedback-service
+      - student-service
+    environment:
+      PRODUCT_SERVICE_BASEURL: feedback-service:8080
+      INVENTORY_INFO_SERVICE_BASEURL: student-service:8082
+      MYSQL_DB_USERNAME: root
+      MYSQL_DB_PASSWORD: abc123
+      MYSQL_DB_HOST: mysql-course
+      MYSQL_DB_PORT: 3306
+
+volumes:
+  mongodb_feedback_data:
+  mysql_student_data:
+  mysql_course_data:
