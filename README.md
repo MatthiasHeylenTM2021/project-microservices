@@ -1,5 +1,5 @@
 # Projectdocumentatie
-##Introductie
+## Introductie
 Dit project is een microservices gebaseerde applicatie die een platform biedt voor het beheren van cursussen, studenten en feedback. Elk van deze functionaliteiten is ingekapseld binnen zijn eigen microservice, wat losse koppeling en hoge cohesie oplevert.
 
 ## Microservices
