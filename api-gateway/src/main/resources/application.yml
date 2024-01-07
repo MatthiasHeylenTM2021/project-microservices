@@ -69,7 +69,7 @@ spring:
         - id: course-service-students
           uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/courses/{courseNumber}
+            - Path=/courses/{id}
             - Method=GET
           filters:
-            - SetPath=/api/courses/{courseNumber}/students
+            - SetPath=/api/courses/{id}/students
