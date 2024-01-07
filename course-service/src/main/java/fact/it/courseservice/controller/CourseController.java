@@ -37,18 +37,16 @@ public class CourseController {
         return courseService.getCourseByCourseNumber(courseNumber);
     }
 
-    @GetMapping("/{id}/feedback")
+    @GetMapping("/{courseNumber}/feedback")
     @ResponseStatus(HttpStatus.OK)
-    public List<FeedbackResponse> getFeedbackForCourse(@PathVariable("id") Long courseId) {
-        System.out.println(courseId);
-        return courseService.getFeedbackForCourse(courseId);
+    public List<FeedbackResponse> getFeedbackForCourse(@PathVariable String courseNumber) {
+        return courseService.getFeedbackForCourse(courseNumber);
     }
 
-    @GetMapping("/{id}/students")
+    @GetMapping("/{courseNumber}/students")
     @ResponseStatus(HttpStatus.OK)
-    public List<StudentResponse> getStudentsForCourse(@PathVariable("id") Long courseId) {
-        System.out.println(courseId);
-        return courseService.getStudentsForCourse(courseId);
+    public List<StudentResponse> getStudentsForCourse(@PathVariable String courseNumber) {
+        return courseService.getStudentsForCourse(courseNumber);
     }
 
     @PutMapping("/{id}")

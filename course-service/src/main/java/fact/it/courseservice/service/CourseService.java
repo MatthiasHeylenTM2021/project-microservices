@@ -89,20 +89,20 @@ public class CourseService {
         return mapToCourseResponse(course);
     }
 
-    public List<FeedbackResponse> getFeedbackForCourse(Long courseId) {
+    public List<FeedbackResponse> getFeedbackForCourse(String courseNumber) {
         return webClient
                 .get()
-                .uri("http://" + feedbackServiceBaseUrl + "/api/feedback/byCourse", uriBuilder -> uriBuilder.queryParam("courseId", courseId).build())
+                .uri("http://" + feedbackServiceBaseUrl + "/api/feedback/byCourse", uriBuilder -> uriBuilder.queryParam("courseNumber", courseNumber).build())
                 .retrieve()
                 .bodyToFlux(FeedbackResponse.class)
                 .collectList()
                 .block();
     }
 
-    public List<StudentResponse> getStudentsForCourse(Long courseId) {
+    public List<StudentResponse> getStudentsForCourse(String courseNumber) {
         return webClient
                 .get()
-                .uri("http://" + studentServiceBaseUrl + "/api/students/byCourse", uriBuilder -> uriBuilder.queryParam("courseId", courseId).build())
+                .uri("http://" + studentServiceBaseUrl + "/api/students/byCourse", uriBuilder -> uriBuilder.queryParam("courseNumber", courseNumber).build())
                 .retrieve()
                 .bodyToFlux(StudentResponse.class)
                 .collectList()
