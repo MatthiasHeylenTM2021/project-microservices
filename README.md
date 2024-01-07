@@ -31,6 +31,7 @@ GET /cursussen/{cursusNummer}: Haal een cursus op op basis van het cursusnummer.
 PUT /cursussen/{cursusId}: Update een cursus.<br />
 DELETE /cursussen/{cursusId}: Verwijder een cursus.<br />
 GET /cursussen/{cursusNummer}/feedback: Haal feedback op voor een cursus.
+GET /cursussen/{cursusNummer}/student: Haal studenten op voor een cursus.
 
 ## Bevestiging van werkende eindpunten
 Bevestiging van werkende eindpunten kan worden gevonden in de GitHub README onder de sectie "Bevestiging van werkende eindpunten". Deze screenshots tonen succesvolle POSTMAN aanvragen naar elk eindpunt.
