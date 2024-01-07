@@ -6,7 +6,7 @@ Dit project is een (lokaal) microservices gebaseerde applicatie die een platform
 De applicatie bestaat uit de volgende microservices:
 
 Cursus Service: Beheert cursusgegevens. Biedt eindpunten voor het creëren, ophalen, updaten en verwijderen van cursussen.<br />
-Studenten Service: Beheert studentengegevens. Biedt eindpunten voor het creëren en ophalen van studenten.<br />
+Student Service: Beheert studentengegevens. Biedt eindpunten voor het creëren en ophalen van studenten.<br />
 Feedback Service: Beheert feedbackgegevens. Biedt eindpunten voor het ophalen van feedback.<br />
 
 <img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fmicroservices.drawio.png?alt=media&token=c1c47d50-f4aa-4e08-994d-827a71d4e161"><br />
