@@ -8,6 +8,7 @@ import fact.it.courseservice.model.Course;
 import fact.it.courseservice.repository.CourseRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -19,6 +20,11 @@ public class CourseService {
 
     private final CourseRepository courseRepository;
     private final WebClient webClient;
+
+    @Value("${feedbackservice.baseurl}")
+    private String feedbackServiceBaseUrl;
+    @Value("${studentservice.baseurl}")
+    private String studentServiceBaseUrl;
 
     @PostConstruct
     public void loadData() {
@@ -84,7 +90,7 @@ public class CourseService {
     public List<FeedbackResponse> getFeedbackForCourse(String courseNumber) {
         return webClient
                 .get()
-                .uri("http://localhost:8080/api/feedback/byCourse?courseNumber=" + courseNumber)
+                .uri("http://" + feedbackServiceBaseUrl + "/api/feedback/byCourse", uriBuilder -> uriBuilder.queryParam("courseNumber", courseNumber).build())
                 .retrieve()
                 .bodyToFlux(FeedbackResponse.class)
                 .collectList()
@@ -94,7 +100,7 @@ public class CourseService {
     public List<StudentResponse> getStudentsForCourse(String courseNumber) {
         return webClient
                 .get()
-                .uri("http://localhost:8081/api/students/byCourse?courseNumber=" + courseNumber)
+                .uri("http://" + studentServiceBaseUrl + "/api/students/byCourse", uriBuilder -> uriBuilder.queryParam("courseNumber", courseNumber).build())
                 .retrieve()
                 .bodyToFlux(StudentResponse.class)
                 .collectList()
