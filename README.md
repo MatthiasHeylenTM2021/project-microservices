@@ -30,7 +30,7 @@ GET /cursussen: Haal alle cursussen op.<br />
 GET /cursussen/{cursusNummer}: Haal een cursus op op basis van het cursusnummer.<br />
 PUT /cursussen/{cursusId}: Update een cursus.<br />
 DELETE /cursussen/{cursusId}: Verwijder een cursus.<br />
-GET /cursussen/{cursusNummer}/feedback: Haal feedback op voor een cursus.
+GET /cursussen/{cursusNummer}/feedback: Haal feedback op voor een cursus.<br />
 GET /cursussen/{cursusNummer}/student: Haal studenten op voor een cursus.
 
 ## Bevestiging van werkende eindpunten
