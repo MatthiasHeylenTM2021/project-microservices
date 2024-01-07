@@ -74,6 +74,7 @@ public class CourseService {
                 .description(courseRequest.getDescription())
                 .instructor(courseRequest.getInstructor())
                 .build();
+        courseRepository.save(course);
         return mapToCourseResponse(course);
     }
 
