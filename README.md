@@ -33,15 +33,15 @@ GET /students: Haal studenten op voor een cursus.
 ## Bevestiging van werkende eindpunten
 
 ### Get all courses
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetcourses.png?alt=media&token=6f28ec5a-5fe5-420e-a009-dcfd7e05b8f2" width="300px"><br />
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetcourses.png?alt=media&token=6f28ec5a-5fe5-420e-a009-dcfd7e05b8f2" width="300px">
 ### Get all students (Auth)
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetstudents.png?alt=media&token=08b55750-962f-41e8-9627-849fdd325eb8" width="300px"><br />
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetstudents.png?alt=media&token=08b55750-962f-41e8-9627-849fdd325eb8" width="300px">
 ### Get all feedback (Auth)
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetfeedback.png?alt=media&token=d3b96806-ec18-4481-9739-bd5e8f270b19" width="300px"><br />
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetfeedback.png?alt=media&token=d3b96806-ec18-4481-9739-bd5e8f270b19" width="300px">
 ### Create Course (Auth)
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fcreatecourse.png?alt=media&token=19955410-23e2-4445-833a-8db5f7fe0d2c" width="300px"><br />
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fcreatecourse.png?alt=media&token=19955410-23e2-4445-833a-8db5f7fe0d2c" width="300px">
 ### Delete Course (Auth)
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fdeletecourse.png?alt=media&token=de57e644-cd73-4780-a6b2-26b0fef5e414" width="300px"><br />
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fdeletecourse.png?alt=media&token=de57e644-cd73-4780-a6b2-26b0fef5e414" width="300px">
 ### Update Course (Auth)
 <img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fupdatecourse.png?alt=media&token=60188e1c-4f3e-49f8-980c-8e17da851f73" width="300px">
 
