@@ -64,6 +64,7 @@ public class StudentService {
                 .lastName(studentRequest.getLastName())
                 .email(studentRequest.getEmail())
                 .build();
+        studentRepository.save(student);
         return mapToStudentResponse(student);
     }
 

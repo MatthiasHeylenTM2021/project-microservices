@@ -33,14 +33,6 @@ public class FeedbackService {
             feedbackRepository.save(feedback2);
         }
     }
-    public void createFeedback(FeedbackRequest feedbackRequest){
-        Feedback feedback = Feedback.builder()
-                .comment(feedbackRequest.getComment())
-                .rating(feedbackRequest.getRating())
-                .build();
-
-        feedbackRepository.save(feedback);
-    }
 
     public List<FeedbackResponse> getAllFeedback() {
         List<Feedback> feedbacks = feedbackRepository.findAll();

@@ -16,12 +16,6 @@ public class FeedbackController {
 
     private final FeedbackService feedbackService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.OK)
-    public void createFeedback(@RequestBody FeedbackRequest feedbackRequest) {
-        feedbackService.createFeedback(feedbackRequest);
-    }
-
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<FeedbackResponse> getAllFeedback() {
