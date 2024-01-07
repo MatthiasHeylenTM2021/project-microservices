@@ -17,7 +17,7 @@ API Gateway: Dient als het enige ingangs punt voor het systeem. Routeert inkomen
 Database: Bewaart gegevens voor elke microservice. Elke microservice heeft zijn eigen database om losse koppeling en hoge cohesie te garanderen.
 
 ## Uitbreidingen
-De enige uitbreiding die ik heb gedaan is de Rate Limiter (2.5)
+De enige uitbreiding die ik heb succesvol heb geïmplementeerd is de Rate Limiter (2.5)
 
 ## Eindpunten
 De applicatie biedt de volgende eindpunten:
