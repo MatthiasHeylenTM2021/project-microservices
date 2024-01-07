@@ -47,8 +47,8 @@ spring:
             - SetPath=/api/courses
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 2
-                redis-rate-limiter.burstCapacity: 4
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
                 redis-rate-limiter.requestedToken: 1
         - id: course-service-create
           uri: http://${COURSE_SERVICE_BASEURL:localhost:8081}
