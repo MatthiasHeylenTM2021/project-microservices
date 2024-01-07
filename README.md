@@ -17,10 +17,11 @@ Database: Bewaart gegevens voor elke microservice. Elke microservice heeft zijn 
 Uitbreidingen
 De applicatie kan op verschillende manieren worden uitgebreid:
 
-## Extra Services: Nieuwe services kunnen worden toegevoegd om extra functionaliteit te bieden. Bijvoorbeeld, een service kan worden toegevoegd om docenten of afdelingen te beheren.
+Extra Services: Nieuwe services kunnen worden toegevoegd om extra functionaliteit te bieden. Bijvoorbeeld, een service kan worden toegevoegd om docenten of afdelingen te beheren.
 Schaalbaarheid: Elke microservice kan onafhankelijk worden geschaald om aan de vraag te voldoen. Dit maakt het systeem in staat om grote hoeveelheden verkeer te verwerken zonder de prestaties te beïnvloeden.
 Resilientie: Het systeem kan snel herstellen na storingen omdat elke microservice geïsoleerd is en zelfstandig kan opereren.
-Eindpunten
+
+## Eindpunten
 De applicatie biedt de volgende eindpunten:
 
 POST /cursussen: Maak een nieuwe cursus.
@@ -29,5 +30,6 @@ GET /cursussen/{cursusNummer}: Haal een cursus op op basis van het cursusnummer.
 PUT /cursussen/{cursusId}: Update een cursus.
 DELETE /cursussen/{cursusId}: Verwijder een cursus.
 GET /cursussen/{cursusNummer}/feedback: Haal feedback op voor een cursus.
-Bevestiging van werkende eindpunten
+
+## Bevestiging van werkende eindpunten
 Bevestiging van werkende eindpunten kan worden gevonden in de GitHub README onder de sectie "Bevestiging van werkende eindpunten". Deze screenshots tonen succesvolle POSTMAN aanvragen naar elk eindpunt.
