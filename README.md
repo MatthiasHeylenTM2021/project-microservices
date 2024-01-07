@@ -25,11 +25,11 @@ Resilientie: Het systeem kan snel herstellen na storingen omdat elke microservic
 ## Eindpunten
 De applicatie biedt de volgende eindpunten:
 
-POST /cursussen: Maak een nieuwe cursus.
-GET /cursussen: Haal alle cursussen op.
-GET /cursussen/{cursusNummer}: Haal een cursus op op basis van het cursusnummer.
-PUT /cursussen/{cursusId}: Update een cursus.
-DELETE /cursussen/{cursusId}: Verwijder een cursus.
+POST /cursussen: Maak een nieuwe cursus.<br />
+GET /cursussen: Haal alle cursussen op.<br />
+GET /cursussen/{cursusNummer}: Haal een cursus op op basis van het cursusnummer.<br />
+PUT /cursussen/{cursusId}: Update een cursus.<br />
+DELETE /cursussen/{cursusId}: Verwijder een cursus.<br />
 GET /cursussen/{cursusNummer}/feedback: Haal feedback op voor een cursus.
 
 ## Bevestiging van werkende eindpunten
