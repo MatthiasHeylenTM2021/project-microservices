@@ -1,15 +1,15 @@
 # Projectdocumentatie
 ## Introductie
-Dit project is een (lokaal) microservices gebaseerde applicatie die een platform biedt voor het beheren van cursussen, studenten en feedback. Elk van deze functionaliteiten is ingekapseld binnen zijn eigen microservice, wat losse koppeling en hoge cohesie oplevert. De basisfunctionaliteiten zouden normaal volledig moeten zijn, inclusief een Rate Limiter uitbreiding.
+Dit project is een (lokaal) microservices gebaseerde applicatie die een platform biedt voor het beheren van cursussen, studenten en feedback. Elk van deze functionaliteiten is ingekapseld binnen zijn eigen microservice, wat losse koppeling en hoge cohesie oplevert./><br /> De basisfunctionaliteiten zouden normaal volledig moeten zijn, inclusief een Rate Limiter uitbreiding.
 
 ## Microservices
 De applicatie bestaat uit de volgende microservices:
 
-Cursus Service: Beheert cursusgegevens. Biedt eindpunten voor het creëren, ophalen, updaten en verwijderen van cursussen.
-Studenten Service: Beheert studentengegevens. Biedt eindpunten voor het creëren en ophalen van studenten.
-Feedback Service: Beheert feedbackgegevens. Biedt eindpunten voor het ophalen van feedback.
+Cursus Service: Beheert cursusgegevens. Biedt eindpunten voor het creëren, ophalen, updaten en verwijderen van cursussen./><br />
+Studenten Service: Beheert studentengegevens. Biedt eindpunten voor het creëren en ophalen van studenten./><br />
+Feedback Service: Beheert feedbackgegevens. Biedt eindpunten voor het ophalen van feedback./><br />
 
-<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fmicroservices.drawio.png?alt=media&token=c1c47d50-f4aa-4e08-994d-827a71d4e161">
+<img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fmicroservices.drawio.png?alt=media&token=c1c47d50-f4aa-4e08-994d-827a71d4e161">/><br />
 ## Componenten
 De applicatie bevat ook de volgende componenten:
 
