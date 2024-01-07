@@ -32,7 +32,7 @@ GET /students: Haal studenten op voor een cursus.
 
 ## Bevestiging van werkende eindpunten
 
-### Get all courses<br />
+### Get all courses
 <img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetcourses.png?alt=media&token=6f28ec5a-5fe5-420e-a009-dcfd7e05b8f2" width="300px"><br />
 Get all students (Auth)<br />
 <img src="https://firebasestorage.googleapis.com/v0/b/microservices-402412.appspot.com/o/matthias%2Fgetstudents.png?alt=media&token=08b55750-962f-41e8-9627-849fdd325eb8" width="300px"><br />
